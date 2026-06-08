@@ -1,4 +1,9 @@
 package ejercicio_1;
 
-public class Producto {
+public interface Producto {
+
+    float sumarPrecioA(float total);
+
+    float sumarPesoA(float total);
 }
+

@@ -1,5 +1,5 @@
 package ejercicio_1;
 
-public interface ServicioADistancia {
+public interface ServicioDistancia {
     float kilometrosHasta(Destino destino);
 }

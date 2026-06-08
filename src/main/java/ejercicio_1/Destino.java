@@ -1,4 +1,8 @@
 package ejercicio_1;
 
-public enum Destino {
+public interface Destino {
+
+    float costoBaseColectivosSur();
+    float costoBaseCorreoArgentino(ServicioDistancia servicio);
+
 }
