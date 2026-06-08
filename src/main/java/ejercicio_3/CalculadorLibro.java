@@ -1,14 +1,19 @@
 package ejercicio_3;
 
 public class CalculadorLibro implements CalculadorDePrecios{
+
+
+    public static final double DESCUENTOS = 0.1;
+    public static final int LIMITE_PRECIO = 100;
+    public static final double IMPUESTOS = 0.1;
+
     @Override
     public double precioFinal(double precio) {
-        var impuestos = 0.1;
-        var descuentos = 0.1;
+        var impuesto = IMPUESTOS;
+        var descuento = DESCUENTOS;
+        double total = precio * (1 + impuesto) * (1 - descuento);
 
-        double total = precio * (1 + impuestos) * (1 - descuentos);
-
-        if (precio > 100) {
+        if (precio > LIMITE_PRECIO) {
             total -= 10;
         }
 
