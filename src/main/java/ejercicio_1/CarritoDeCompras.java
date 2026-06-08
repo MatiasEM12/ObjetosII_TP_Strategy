@@ -7,10 +7,12 @@ public class CarritoDeCompras {
     private Cliente cliente;
     private List<Producto> productos;
     private TipoEnvio tipoEnvio;
+    private Destino destino;
 
     public CarritoDeCompras(Cliente cliente, TipoEnvio tipoEnvio,Destino destino) {
         this.cliente = cliente;
         this.tipoEnvio = tipoEnvio;
+        this.destino = destino;
         this.productos = new ArrayList<>();
     }
 
@@ -22,10 +24,11 @@ public class CarritoDeCompras {
         float total = 0;
         float totalPeso=0;
         for (Producto producto : productos) {
-            total += producto.sumarPrecioA(total);
-            totalPeso += producto.sumarPesoA(totalPeso);
+            total = producto.sumarPrecioA(total);
+            totalPeso = producto.sumarPesoA(totalPeso);
         }
 
+        total += tipoEnvio.calcularCosto(destino,totalPeso);
 
         return total;
 
